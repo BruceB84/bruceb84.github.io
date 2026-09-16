@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bruce Bouisson – Cybersécurité et infrastructures</title>
+<meta name="description" content="Bruce Bouisson, technicien cybersécurité en alternance chez Orano. Sécurité des infrastructures, systèmes et réseaux, automatisation. Disponible en septembre 2027.">
+<meta property="og:title" content="Bruce Bouisson – Cybersécurité et infrastructures">
+<meta property="og:description" content="Je sécurise et j'automatise des infrastructures. Disponible en septembre 2027.">
+<meta property="og:image" content="photo.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231B2430'/><rect x='6' y='20' width='20' height='5' fill='%23F2C230'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDF0F2;
+    --surface: #F8F9FA;
+    --ink: #1B2430;
+    --muted: #55606C;
+    --rule: #C6CDD4;
+    --signal: #F2C230;
+    --on-signal: #1B2430;
+    --measure: 68ch;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12171E;
+      --surface: #19202A;
+      --ink: #E3E8ED;
+      --muted: #9CA7B3;
+      --rule: #2D3642;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    font-stretch: 100%;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--signal); }
+  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+  .wrap { max-width: 76rem; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Navigation */
+  .top {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; flex-wrap: wrap;
+    padding-top: 1.25rem; padding-bottom: 1.25rem;
+  }
+  .top .mark { font-weight: 700; font-stretch: 75%; font-size: 1.25rem; text-decoration: none; }
+  .top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: .95rem; }
+  .top nav a { text-decoration: none; color: var(--muted); }
+  .top nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2rem 3rem;
+    padding-top: clamp(2rem, 8vw, 6rem);
+  }
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(4rem, 15vw, 11.5rem);
+    font-stretch: 62%;
+    font-weight: 850;
+    line-height: .82;
+    letter-spacing: -.01em;
+  }
+  .bar {
+    grid-column: 1 / -1;
+    height: 14px;
+    background: var(--signal);
+    transform-origin: left;
+    animation: draw 900ms cubic-bezier(.2,.7,.2,1) both 150ms;
+  }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .portrait { position: relative; width: clamp(140px, 18vw, 220px); }
+  .portrait::before {
+    content: ""; position: absolute; inset: 14px -14px -14px 14px;
+    background: var(--signal);
+  }
+  .portrait img { position: relative; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; filter: grayscale(.15); }
+
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 2rem 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: clamp(3rem, 8vw, 6rem);
+  }
+  .lede {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    line-height: 1.3;
+    font-weight: 400;
+    max-width: 30ch;
+  }
+  .status {
+    background: var(--signal);
+    color: var(--on-signal);
+    padding: 1.5rem 1.75rem;
+    align-self: start;
+  }
+  .status strong { display: block; font-stretch: 75%; font-size: 1.6rem; line-height: 1.1; margin-bottom: .5rem; }
+  .status p { margin: 0 0 1.25rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn {
+    display: inline-block; padding: .65rem 1.1rem;
+    font-weight: 600; text-decoration: none;
+    border: 2px solid var(--on-signal);
+  }
+  .btn.solid { background: var(--on-signal); color: #F8F9FA; }
+  .btn:hover { text-decoration: none; background: #fff; color: var(--on-signal); }
+
+  /* Sections */
+  section { padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--rule); }
+  .head { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 1rem 3rem; }
+  h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-stretch: 68%;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .head p.note { margin: .75rem 0 0; color: var(--muted); max-width: 26ch; }
+  h3 { font-stretch: 75%; font-weight: 700; font-size: 1.45rem; line-height: 1.15; margin: 0 0 .25rem; }
+  .muted { color: var(--muted); }
+
+  /* Méthode : vraie séquence */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; counter-reset: s; }
+  .steps li { counter-increment: s; border-top: 3px solid var(--ink); padding-top: .9rem; }
+  .steps li::before {
+    content: counter(s);
+    display: block; font-stretch: 62%; font-weight: 800; font-size: 3rem; line-height: 1; margin-bottom: .5rem;
+  }
+  .steps p { margin: .25rem 0 0; color: var(--muted); }
+
+  /* Parcours */
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li {
+    display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .25rem 2rem;
+    padding: 1.1rem 0; border-bottom: 1px solid var(--rule);
+  }
+  .timeline li:first-child { padding-top: 0; }
+  .when { font-stretch: 75%; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--muted); padding-top: .2rem; }
+  .timeline p { margin: .2rem 0 0; max-width: var(--measure); }
+  .kind { font-size: .9rem; color: var(--muted); }
+
+  /* Projets */
+  .group + .group { margin-top: 2.75rem; }
+  .group > h3 { padding-bottom: .5rem; border-bottom: 3px solid var(--ink); margin-bottom: 0; }
+  .project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 14rem); gap: .25rem 2rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+  .project h4 { margin: 0; font-size: 1.1rem; font-weight: 650; }
+  .project p { margin: .25rem 0 0; max-width: var(--measure); color: var(--muted); }
+  .tools { font-size: .95rem; color: var(--muted); padding-top: .15rem; }
+
+  /* Compétences */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 2rem; }
+  .skills ul { list-style: none; margin: .5rem 0 0; padding: 0; }
+  .skills li { padding: .3rem 0; border-bottom: 1px solid var(--rule); }
+
+  /* Certifications */
+  .certs { list-style: none; margin: 0; padding: 0; }
+  .certs li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem 1.5rem; padding: .9rem 0; border-bottom: 1px solid var(--rule); }
+  .certs .year { font-variant-numeric: tabular-nums; color: var(--muted); }
+  .certs li.next { border-bottom: 3px solid var(--signal); }
+
+  /* Hors travail */
+  .ring p { margin: 0 0 1rem; max-width: var(--measure); }
+  .ring p.big { font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1.3; }
+
+  /* Contact */
+  .contact { padding-bottom: 4rem; }
+  .contact .mail {
+    display: inline-block;
+    font-size: clamp(1.6rem, 5.5vw, 4rem);
+    font-stretch: 62%; font-weight: 800; line-height: 1.05;
+    word-break: break-all;
+    text-decoration: none;
+    border-bottom: 8px solid var(--signal);
+  }
+  .contact .mail:hover { border-bottom-color: var(--ink); }
+  .contact ul { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--rule); }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .portrait { order: -1; }
+    .intro, .head { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
+    .top nav { gap: .9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bar { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="#">Bruce Bouisson</a>
+  <nav aria-label="Sections">
+    <a href="#methode">Méthode</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#projets">Projets</a>
+    <a href="#competences">Compétences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Bruce<br>Bouisson</h1>
+      <div class="portrait">
+        <img src="photo.jpg" alt="Portrait de Bruce Bouisson" width="600" height="600">
+      </div>
+      <div class="bar" aria-hidden="true"></div>
+    </div>
+
+    <div class="intro">
+      <p class="lede">Je sécurise et j'automatise des infrastructures Windows, Linux et réseau. Technicien cybersécurité en alternance chez Orano.</p>
+      <div class="status">
+        <strong>Disponible en septembre 2027</strong>
+        <p>Je cherche un poste d'ingénieur sécurité ou d'administrateur systèmes et réseaux orienté sécurité. Mobile en France, à l'international ou en télétravail.</p>
+        <div class="actions">
+          <a class="btn solid" href="mailto:bruce.bouissonitro@gmail.com">Écrire un email</a>
+          <a class="btn" href="https://www.linkedin.com/in/bruce-bouisson-878a5a237/" target="_blank" rel="noopener">Voir mon LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="methode">
+    <div class="wrap head">
+      <div>
+        <h2>Ma méthode</h2>
+        <p class="note">Chaque projet suit le même chemin, du besoin à la production.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Besoin</h3><p>Un besoin remonté par l'équipe, ou une amélioration que je propose.</p></li>
+        <li><h3>Preuve de concept</h3><p>Je construis et teste la solution dans un environnement dédié.</p></li>
+        <li><h3>Documentation</h3><p>Je rédige une documentation que l'équipe peut reprendre sans moi.</p></li>
+        <li><h3>Production</h3><p>La solution validée est déployée et maintenue.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="wrap head">
+      <div>
+        <h2>Parcours</h2>
+        <p class="note">Quatre ans d'alternance, du support informatique à la cybersécurité.</p>
+      </div>
+      <ol class="timeline" reversed>
+        <li>
+          <span class="when">2025 – 2027</span>
+          <div>
+            <h3>Master Manager en ingénierie informatique</h3>
+            <span class="kind">CCI Académie Vaucluse Provence, Avignon</span>
+            <p>Titre RNCP niveau 7, spécialisation cybersécurité, en alternance.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Depuis 2024</span>
+          <div>
+            <h3>Technicien supérieur en cybersécurité</h3>
+            <span class="kind">Orano, Pierrelatte, alternance</span>
+            <p>Projets de sécurisation et d'automatisation au sein du service informatique, menés de la preuve de concept à la mise en production.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2024 – 2025</span>
+          <div>
+            <h3>Bachelor Développeur Solutions Numériques Sécurisées</h3>
+            <span class="kind">Campus CCI Vaucluse, Avignon</span>
+            <p>Parcours cybersécurité.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2022 – 2024</span>
+          <div>
+            <h3>Technicien informatique</h3>
+            <span class="kind">Ville d'Orange et communauté de communes, alternance</span>
+            <p>Support utilisateurs, administration réseau, renouvellement du parc informatique.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2022 – 2024</span>
+          <div>
+            <h3>BTS SIO option SISR</h3>
+            <span class="kind">Nextech, Avignon</span>
+            <p>Solutions d'infrastructure, systèmes et réseaux. Diplôme obtenu en 2024.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2022</span>
+          <div>
+            <h3>Baccalauréat général</h3>
+            <span class="kind">Lycée de l'Arc, Orange</span>
+            <p>Spécialités mathématiques et sciences de l'ingénieur, mention assez bien.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="wrap head">
+      <div>
+        <h2>Projets</h2>
+        <p class="note">Les projets menés en entreprise sont décrits sans détail sur les environnements concernés.</p>
+      </div>
+      <div>
+        <div class="group">
+          <h3>Chez Orano</h3>
+          <div class="project">
+            <div><h4>Automatisation du déploiement des postes de travail</h4><p>Modernisation d'une chaîne de déploiement Windows existante vers une approche entièrement automatisée.</p></div>
+            <div class="tools">Ansible, PowerShell</div>
+          </div>
+          <div class="project">
+            <div><h4>Gestion des mises à jour</h4><p>Industrialisation du déploiement des correctifs sur les systèmes Windows et Linux.</p></div>
+            <div class="tools">Windows, Linux</div>
+          </div>
+          <div class="project">
+            <div><h4>Sécurisation des accès sans fil et segmentation réseau</h4><p>Authentification Wi-Fi par certificat et isolement des équipements sur le réseau.</p></div>
+            <div class="tools">802.1X, VLAN</div>
+          </div>
+          <div class="project">
+            <div><h4>Évaluation de la sécurité d'équipements réseau</h4><p>Analyse de vulnérabilités et recommandations de durcissement.</p></div>
+            <div class="tools">Nessus</div>
+          </div>
+          <div class="project">
+            <div><h4>R&amp;D en sécurité des communications</h4><p>Veille et expérimentations autour des signaux radio et des objets connectés.</p></div>
+            <div class="tools">Radio logicielle, Bluetooth LE</div>
+          </div>
+        </div>
+
+        <div class="group">
+          <h3>À la Ville d'Orange</h3>
+          <div class="project">
+            <div><h4>Migration du parc vers Windows 11</h4><p>Remplacement des machines et passage de l'ensemble des postes sous Windows 11.</p></div>
+            <div class="tools">Windows 11</div>
+          </div>
+          <div class="project">
+            <div><h4>Montée de version de GLPI</h4><p>Migration de l'outil de gestion de parc et d'assistance vers sa dernière version.</p></div>
+            <div class="tools">GLPI</div>
+          </div>
+        </div>
+
+        <div class="group">
+          <h3>À l'école et chez moi</h3>
+          <div class="project">
+            <div><h4>Nuit du Hacking</h4><p>Conception et organisation d'une compétition Capture The Flag pour mon école.</p></div>
+            <div class="tools">CTF</div>
+          </div>
+          <div class="project">
+            <div><h4>Homelab</h4><p>Un laboratoire personnel, construit petit à petit, pour tester des technologies avant de les utiliser en entreprise.</p></div>
+            <div class="tools">Virtualisation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="wrap head">
+      <div>
+        <h2>Compétences</h2>
+      </div>
+      <div class="skills">
+        <div>
+          <h3>Systèmes</h3>
+          <ul><li>Windows Server</li><li>Windows 10 et 11</li><li>Linux</li></ul>
+        </div>
+        <div>
+          <h3>Réseau et sécurité</h3>
+          <ul><li>Pare-feu Fortinet</li><li>Switchs et VLAN</li><li>Wi-Fi 802.1X</li><li>Analyse de vulnérabilités</li></ul>
+        </div>
+        <div>
+          <h3>Automatisation</h3>
+          <ul><li>Ansible</li><li>PowerShell</li><li>Python</li></ul>
+        </div>
+        <div>
+          <h3>Virtualisation</h3>
+          <ul><li>VMware</li><li>Hyper-V</li><li>Proxmox</li></ul>
+        </div>
+        <div>
+          <h3>Au quotidien</h3>
+          <ul><li>Documentation technique</li><li>Gestion de parc avec GLPI</li><li>Français natif, anglais professionnel</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap head">
+      <div>
+        <h2>Certifications</h2>
+      </div>
+      <ul class="certs">
+        <li class="next"><span><strong>OSCP</strong> <span class="muted">en préparation</span></span><span class="year">2026 – 2027</span></li>
+        <li><span><strong>Introduction to Cybersecurity</strong> <span class="muted">Cisco Networking Academy</span></span><span class="year">2024</span></li>
+        <li><span><strong>SecNumacadémie</strong> <span class="muted">ANSSI</span></span><span class="year">2023</span></li>
+        <li><span><strong>Sensibilisation à la protection du secret</strong> <span class="muted">DRSD</span></span><span class="year">2023</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ring" class="ring">
+    <div class="wrap head">
+      <div>
+        <h2>Hors du travail</h2>
+      </div>
+      <div>
+        <p class="big">Boxeur semi-professionnel en K1 et kickboxing depuis l'âge de 4 ans, j'ai aussi combattu en MMA chez Hexagone MMA.</p>
+        <p>Je suis bénévole au club First Impact Orange. Le ring m'a appris la discipline, la constance et le sang-froid, trois qualités qui me servent aussi en cybersécurité.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Me contacter</h2>
+      <p class="muted">Pour un poste à partir de septembre 2027, ou simplement pour échanger.</p>
+      <a class="mail" href="mailto:bruce.bouissonitro@gmail.com">bruce.bouissonitro@gmail.com</a>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/bruce-bouisson-878a5a237/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Bruce Bouisson, Vaucluse. Mis à jour en 2026.</div>
+</footer>
+
+</body>
+</html>
