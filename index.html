@@ -242,7 +242,7 @@
       <p class="lede">Je sécurise et j'automatise des infrastructures Windows, Linux et réseau. Technicien cybersécurité en alternance chez Orano.</p>
       <div class="status">
         <strong>Disponible en septembre 2027</strong>
-        <p>Je cherche un poste d'ingénieur sécurité ou d'administrateur systèmes et réseaux orienté sécurité. Mobile en France, à l'international ou en télétravail.</p>
+        <p>Je cherche un poste d'administrateur ou d'ingénieur sécurité des systèmes et réseaux, ou d'administrateur systèmes DevOps. Mobile en France, à l'international ou en télétravail.</p>
         <div class="actions">
           <a class="btn solid" href="mailto:bruce.bouissonnitro@gmail.com">Écrire un email</a>
           <a class="btn" href="https://www.linkedin.com/in/bruce-bouisson-878a5a237/" target="_blank" rel="noopener">Voir mon LinkedIn</a>
@@ -270,7 +270,7 @@
     <div class="wrap head">
       <div>
         <h2>Parcours</h2>
-        <p class="note">Quatre ans d'alternance, du support informatique à la cybersécurité.</p>
+        <p class="note">En alternance depuis 2022, du support informatique à la cybersécurité.</p>
       </div>
       <ol class="timeline" reversed>
         <li>
@@ -278,15 +278,15 @@
           <div>
             <h3>Master Manager en ingénierie informatique</h3>
             <span class="kind">ESIEE-IT, Avignon</span>
-            <p>Titre RNCP 41880, niveau 7 (Bac+5), spécialisation cybersécurité, en alternance.</p>
+            <p>Titre RNCP 35435, niveau 7 (Bac+5), spécialisation cybersécurité, en alternance.</p>
           </div>
         </li>
         <li>
-          <span class="when">Depuis 2024</span>
+          <span class="when">2024 – 2027</span>
           <div>
             <h3>Technicien supérieur en cybersécurité</h3>
             <span class="kind">Orano, Pierrelatte, alternance</span>
-            <p>Projets de sécurisation et d'automatisation au sein du service informatique, menés de la preuve de concept à la mise en production.</p>
+            <p>Équipe cybersécurité rattachée au RSSI, sur un site nucléaire. Projets de sécurisation et d'automatisation menés de la preuve de concept à la mise en production.</p>
           </div>
         </li>
         <li>
@@ -294,13 +294,13 @@
           <div>
             <h3>Bachelor Développeur Solutions Numériques Sécurisées</h3>
             <span class="kind">ESIEE-IT, Avignon</span>
-            <p>Titre RNCP 42620, niveau 6, parcours cybersécurité.</p>
+            <p>Titre RNCP 37778, niveau 6, parcours cybersécurité.</p>
           </div>
         </li>
         <li>
           <span class="when">2022 – 2024</span>
           <div>
-            <h3>Technicien informatique</h3>
+            <h3>Technicien systèmes et réseaux</h3>
             <span class="kind">Ville d'Orange et Communauté de communes du Pays Réuni d'Orange, alternance</span>
             <p>Support utilisateurs, administration réseau, renouvellement du parc informatique.</p>
           </div>
@@ -329,29 +329,49 @@
     <div class="wrap head">
       <div>
         <h2>Projets</h2>
-        <p class="note">Les projets menés en entreprise sont décrits sans détail sur les environnements concernés.</p>
+        <p class="note">Les projets menés en entreprise sont décrits sans aucune donnée confidentielle.</p>
       </div>
       <div>
         <div class="group">
           <h3>Chez Orano</h3>
           <div class="project">
-            <div><h4>Automatisation du déploiement des postes de travail</h4><p>Modernisation d'une chaîne de déploiement Windows existante vers une approche entièrement automatisée.</p></div>
+            <div><h4>Isolement automatique des postes compromis</h4><p>Mécanisme de réponse à incident qui coupe une machine du réseau immédiatement, sans intervention manuelle.</p></div>
+            <div class="tools">Trend Micro Apex One</div>
+          </div>
+          <div class="project">
+            <div><h4>Wi-Fi d'entreprise par certificat machine</h4><p>Authentification 802.1X adossée à l'annuaire, à la PKI et à un serveur RADIUS, avec VLAN et DHCP dédiés.</p></div>
+            <div class="tools">802.1X / EAP-TLS, Active Directory, PKI, RADIUS</div>
+          </div>
+          <div class="project">
+            <div><h4>Segmentation avancée</h4><p>Isolement strict de machines virtuelles sur des switchs industriels, sans multiplier les VLAN à administrer.</p></div>
+            <div class="tools">Private VLAN, Hyper-V</div>
+          </div>
+          <div class="project">
+            <div><h4>Audit et durcissement de passerelles LoRaWAN</h4><p>Analyse de vulnérabilités, mise à jour du firmware, fermeture des services exposés inutiles et plan de remédiation.</p></div>
+            <div class="tools">Nmap, Nessus, Wapiti, Skipfish</div>
+          </div>
+          <div class="project">
+            <div><h4>Qualité de service sur pare-feu</h4><p>Priorisation des applications métier critiques ; flux non prioritaires ramenés de 100 à 30 Mbps.</p></div>
+            <div class="tools">FortiGate, traffic shaping</div>
+          </div>
+          <div class="project">
+            <div><h4>Mises à jour d'un parc Linux déconnecté d'Internet</h4><p>Architecture à deux serveurs (amont et aval), procédure rédigée et formation interne des équipes.</p></div>
+            <div class="tools">Red Hat Enterprise Linux, Satellite</div>
+          </div>
+          <div class="project">
+            <div><h4>Automatisation du déploiement des postes Windows</h4><p>Remplacement d'une chaîne existante par un déploiement entièrement automatisé.</p></div>
             <div class="tools">Ansible, PowerShell</div>
           </div>
           <div class="project">
-            <div><h4>Gestion des mises à jour</h4><p>Industrialisation du déploiement des correctifs sur les systèmes Windows et Linux.</p></div>
-            <div class="tools">Windows, Linux</div>
+            <div><h4>Authentification unique</h4><p>Mise en place d'un SSO pour les applications internes.</p></div>
+            <div class="tools">Keycloak, OpenID Connect</div>
           </div>
           <div class="project">
-            <div><h4>Sécurisation des accès sans fil et segmentation réseau</h4><p>Authentification Wi-Fi par certificat et isolement des équipements sur le réseau.</p></div>
-            <div class="tools">802.1X, VLAN</div>
+            <div><h4>Administration de la forge GitLab</h4><p>Groupes et dépôts, droits par rôles, fiches d'exploitation pour l'équipe.</p></div>
+            <div class="tools">GitLab</div>
           </div>
           <div class="project">
-            <div><h4>Évaluation de la sécurité d'équipements réseau</h4><p>Analyse de vulnérabilités et recommandations de durcissement.</p></div>
-            <div class="tools">Nessus</div>
-          </div>
-          <div class="project">
-            <div><h4>R&amp;D en sécurité des communications</h4><p>Veille et expérimentations autour des signaux radio et des objets connectés.</p></div>
+            <div><h4>R&amp;D en sécurité des communications</h4><p>Veille et expérimentations sur les signaux radio et le Bluetooth Low Energy.</p></div>
             <div class="tools">Radio logicielle, Bluetooth LE</div>
           </div>
         </div>
@@ -369,14 +389,14 @@
         </div>
 
         <div class="group">
-          <h3>À l'école et chez moi</h3>
+          <h3>Autres projets</h3>
           <div class="project">
-            <div><h4>CTF « Une Nuit Pour Hacker 2026 »</h4><p>Conception, seul, de sept challenges (revue de code, OSINT, reverse, web, forensics, cryptographie), du niveau débutant à difficile, avec write-ups et plans de test, pour un événement de 150 participants.</p></div>
-            <div class="tools">Conception de challenges</div>
+            <div><h4>CTF « Une Nuit Pour Hacker 2026 »</h4><p>Pour la CCI Vaucluse : conception, seul, de sept challenges (web, forensics, cryptographie, reverse, OSINT, revue de code), du niveau débutant à difficile, avec dossier de conception, write-ups et plans de test, pour 150 participants.</p></div>
+            <div class="tools">Conception de challenges, mars 2026</div>
           </div>
           <div class="project">
-            <div><h4>Homelab</h4><p>Une dizaine de services auto-hébergés (mots de passe, DNS filtrant, forge Git, supervision), tous documentés.</p></div>
-            <div class="tools">Docker</div>
+            <div><h4>Application web du club First Impact Orange</h4><p>Conçue, développée et exploitée bénévolement, en production depuis avril 2026 : site public et back-office pour plus de 200 adhérents (inscription en ligne, espace coach, application installable avec notifications). Sécurité intégrée : sessions par jeton, limitation des tentatives de connexion, protection XSS et injection, en-têtes HTTP.</p></div>
+            <div class="tools">JavaScript, Google Apps Script, Git</div>
           </div>
         </div>
       </div>
@@ -391,19 +411,23 @@
       <div class="skills">
         <div>
           <h3>Systèmes</h3>
-          <ul><li>Windows Server</li><li>Windows 10 et 11</li><li>Linux</li></ul>
+          <ul><li>Windows Server, Active Directory</li><li>Red Hat Enterprise Linux, Satellite</li><li>Windows 10 et 11</li></ul>
         </div>
         <div>
-          <h3>Réseau et sécurité</h3>
-          <ul><li>Pare-feu Fortinet</li><li>Switchs et VLAN</li><li>Wi-Fi 802.1X</li><li>Analyse de vulnérabilités</li></ul>
+          <h3>Réseau</h3>
+          <ul><li>FortiGate, QoS</li><li>VLAN et Private VLAN</li><li>802.1X / EAP-TLS, RADIUS</li><li>UniFi, switchs industriels</li></ul>
+        </div>
+        <div>
+          <h3>Sécurité défensive</h3>
+          <ul><li>Durcissement Windows et Linux</li><li>PKI, SSO (Keycloak)</li><li>EDR Trend Micro Apex One</li><li>Analyse de vulnérabilités (Nessus, Nmap)</li></ul>
         </div>
         <div>
           <h3>Automatisation</h3>
-          <ul><li>Ansible</li><li>PowerShell</li><li>Python</li></ul>
+          <ul><li>Ansible</li><li>PowerShell, Python, Bash</li><li>Git, GitLab</li></ul>
         </div>
         <div>
           <h3>Virtualisation</h3>
-          <ul><li>VMware</li><li>Hyper-V</li><li>Proxmox</li></ul>
+          <ul><li>Hyper-V, VMware</li><li>Proxmox</li><li>Docker</li></ul>
         </div>
         <div>
           <h3>Au quotidien</h3>
@@ -419,7 +443,7 @@
         <h2>Certifications</h2>
       </div>
       <ul class="certs">
-        <li class="next"><span><strong>OSCP</strong> <span class="muted">en préparation</span></span><span class="year">2026 – 2027</span></li>
+        <li class="next"><span><strong>OSCP</strong> <span class="muted">prévue</span></span><span class="year">2027</span></li>
         <li><span><strong>Introduction to Cybersecurity</strong> <span class="muted">Cisco Networking Academy</span></span><span class="year">2024</span></li>
         <li><span><strong>SecNumacadémie</strong> <span class="muted">ANSSI</span></span><span class="year">2023</span></li>
         <li><span><strong>Sensibilisation à la protection du secret</strong> <span class="muted">DRSD</span></span><span class="year">2023</span></li>
@@ -434,7 +458,7 @@
       </div>
       <div>
         <p class="big">Champion de France et champion PACA de kickboxing / K1, vice-champion de France de kickboxing / K1 et vice-champion PACA de MMA.</p>
-        <p>Je boxe depuis l'âge de 4 ans, en semi-professionnel, et j'ai aussi combattu chez Hexagone MMA. Je suis bénévole au club First Impact Orange. Le ring m'a appris la discipline, la constance et le sang-froid, trois qualités qui me servent aussi en cybersécurité.</p>
+        <p>Je boxe depuis l'âge de 4 ans, en semi-professionnel, et j'ai aussi combattu chez Hexagone MMA. Je suis moniteur bénévole au club First Impact Orange et titulaire du PSC1. Le ring m'a appris la discipline, la constance et le sang-froid, trois qualités qui me servent aussi en cybersécurité.</p>
       </div>
     </div>
   </section>
@@ -452,7 +476,7 @@
 </main>
 
 <footer>
-  <div class="wrap">Bruce Bouisson, Vaucluse. Mis à jour en 2026.</div>
+  <div class="wrap">Bruce Bouisson, Vaucluse. Mis à jour en novembre 2026.</div>
 </footer>
 
 </body>
