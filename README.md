@@ -5,8 +5,7 @@ Site statique : `index.html` + `photo.jpg`. Aucune installation nécessaire.
 ## Mise en ligne sur GitHub Pages
 
 1. Crée un compte sur github.com si tu n'en as pas.
-2. Crée un nouveau dépôt **public** nommé exactement `bruceb84.github.io`
-   .
+2. Crée un nouveau dépôt **public** nommé exactement `bruceb84.github.io`.
 3. Dans le dépôt : **Add file > Upload files**, glisse `index.html`, `photo.jpg`
    et ce `README.md`, puis **Commit changes**.
 4. Va dans **Settings > Pages** : Source = *Deploy from a branch*,
